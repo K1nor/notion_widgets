@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Pomodoro Timer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Dela+Gothic+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="master-block">
+    <div class="datetime-block">
+      <div class="time" id="dt-time">--:--:--</div>
+      <div class="daydate" id="dt-daydate">--- | --.--.---</div>
+    </div>
+    <div class="timer-block">
+      <div class="timer"><span id="minutes">--</span>:<span id="seconds">--</span></div>
+      <div class="cycle-label" id="cycle-label"></div>
+    </div>
+    <div class="progress-block">
+      <div class="progress-bar work" id="progress-bar"></div>
+    </div>
+    <div class="controls-block">
+      <button id="settings-btn" class="icon-btn"><i class="fas fa-cog"></i></button>
+      <button id="start-pause"><i class="fas fa-play"></i></button>
+      <button id="skip-btn" class="icon-btn" disabled><i class="fas fa-forward"></i></button>
+      <button id="reset-btn" class="icon-btn"><i class="fas fa-sync-alt"></i></button>
+    </div>
+  </div>
+
+  <div id="settings-modal" class="modal">
+    <div class="modal-content">
+      <label for="work-minutes-input">Фокус:<input id="work-minutes-input" type="number" min="1"></label>
+      <label for="break-minutes-input">Отдых:<input id="break-minutes-input" type="number" min="1"></label>
+      <div class="setting">
+        <input type="checkbox" id="loop-checkbox"><label for="loop-checkbox">Зациклить</label>
+        <input id="cycle-count-input" type="number" min="1" placeholder="">
+      </div>
+      <div class="setting">
+        <input type="checkbox" id="timer-sound-checkbox"><label for="timer-sound-checkbox">Оповещение</label>
+        <input type="range" id="timer-volume" min="0" max="1" step="0.01">
+      </div>
+      <div class="setting">
+        <input type="checkbox" id="btn-sound-checkbox"><label for="btn-sound-checkbox">Кнопки</label>
+        <input type="range" id="btn-volume" min="0" max="1" step="0.01">
+      </div>
+      <div class="modal-buttons">
+        <button id="save-settings-btn">Сохранить</button>
+        <button id="cancel-settings-btn">Отмена</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="start-sound" src="start.mp3" preload="auto"></audio>
+  <audio id="end-sound"   src="end.mp3"   preload="auto"></audio>
+  <audio id="btn-sound"   src="btn.mp3"   preload="auto"></audio>
+  <script src="scripts.js"></script>
+</body>
+</html>
