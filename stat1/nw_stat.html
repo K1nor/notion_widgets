@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мониторинг ПК</title>
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="master-block">
+        <div class="gpu-block block-row">
+            <div class="metric-group right">
+                <span class="value right" id="gpu_load">--</span>
+                <span class="unit">%</span>
+            </div>
+            <div class="gap"></div>
+            <div class="metric-group left">
+                <span class="value left" id="gpu_temp">--</span>
+                <span class="unit">°C</span>
+            </div>
+        </div>
+        <div class="cpu-block block-row">
+            <div class="metric-group right">
+                <span class="value right" id="cpu_load">--</span>
+                <span class="unit">%</span>
+            </div>
+            <div class="gap"></div>
+            <div class="metric-group left">
+                <span class="value left" id="cpu_temp">--</span>
+                <span class="unit">°C</span>
+            </div>
+        </div>
+        <div class="ram-block block-row">
+            <div class="metric-group right">
+                <span class="value right" id="ram_load">--</span>
+                <span class="unit">%</span>
+            </div>
+            <div class="gap"></div>
+            <div class="metric-group left">
+                <span class="value left" id="ram_used">--</span>
+                <span class="unit">GB</span>
+            </div>
+        </div>
+        <div class="ssd-block block-row">
+            <div class="metric-group right">
+                <span class="value right" id="ssd_read">--</span>
+                <span class="unit">MB/s</span>
+            </div>
+            <div class="gap"></div>
+            <div class="metric-group left">
+                <span class="value left" id="ssd_write">--</span>
+                <span class="unit">MB/s</span>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
